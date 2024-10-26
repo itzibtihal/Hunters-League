@@ -1,0 +1,73 @@
+Task 7: Member Registration for Competitions
+Description: Implement functionality for members to register for competitions.
+Subtasks:
+Create API endpoint for member registration for a competition.
+Ensure registrations close 24 hours before the competition start.
+Validate member eligibility (license status).
+Write unit tests for competition registration.
+
+
+
+
+Task 8: Results Management
+Description: Implement functionality for jury to submit competition results.
+Subtasks:
+Create a Results entity and endpoint for submitting results.
+Implement scoring logic based on species and performance factors.
+Ensure results are updated in real-time.
+Write unit tests for results submission.
+
+
+
+
+
+Task 9: Performance History
+Description: Implement functionality for members to view their competition performance history.
+Subtasks:
+Create an API endpoint for fetching a member's competition results.
+Implement the logic to retrieve historical performance data.
+Write unit tests for performance history retrieval.
+
+
+
+
+
+
+Task 10: Leaderboard Display
+Description: Implement functionality for administrators to display the podium for competitions.
+Subtasks:
+Create an API endpoint to fetch and display top competitors.
+Implement logic to calculate and return leaderboard data.
+Write unit tests for leaderboard functionality.
+
+
+
+Task 11: Error Handling and Data Validation
+Description: Implement centralized exception handling and data validation throughout the application.
+Subtasks:
+Create a global exception handler for managing API exceptions.
+Implement data validation annotations in entity classes.
+Write unit tests for error handling and validation scenarios.
+
+
+
+
+
+
+Task 12: Code Quality and Testing
+Description: Ensure code quality and maintainability.
+Subtasks:
+Set up SonarQube for code quality analysis.
+Implement unit tests for all implemented features.
+Conduct a code review for adherence to coding standards.
+
+
+
+
+
+
+
+
+Bonus Tasks
+Implement performance comparison functionality for members.
+Audit modifications to species.
