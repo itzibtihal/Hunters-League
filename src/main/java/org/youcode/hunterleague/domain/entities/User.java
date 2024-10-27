@@ -65,4 +65,5 @@ public class User {
         this.id = UUID.randomUUID();
         this.created_at = LocalDateTime.now();
     }
+    // to add in here the relations
 }
