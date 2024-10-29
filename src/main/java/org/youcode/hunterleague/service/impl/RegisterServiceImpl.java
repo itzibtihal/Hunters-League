@@ -1,10 +1,11 @@
-package org.youcode.hunterleague.service;
+package org.youcode.hunterleague.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.youcode.hunterleague.domain.User;
 import org.youcode.hunterleague.exception.user.DuplicateUserException;
 import org.youcode.hunterleague.repository.UserRepository; // Make sure to import your UserRepository
+import org.youcode.hunterleague.service.RegisterService;
 
 import java.util.Optional;
 

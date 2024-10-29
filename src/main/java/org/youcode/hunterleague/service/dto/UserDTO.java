@@ -5,6 +5,7 @@ import org.youcode.hunterleague.domain.enums.Role;
 
 @Data
 public class UserDTO {
+
     private String username;
     private Role role;
 

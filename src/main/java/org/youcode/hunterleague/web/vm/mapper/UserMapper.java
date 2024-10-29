@@ -14,16 +14,16 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "password", expression = "java(PasswordUtil.hashPassword(registerVM.getPassword()))")
-    @Mapping(target = "joinDate", expression = "java(LocalDateTime.now())")
-    @Mapping(target = "firstName", source = "firstName")
-    @Mapping(target = "lastName", source = "lastName")
-    @Mapping(target = "cin", source = "cin")
-    @Mapping(target = "email", source = "email")
-    @Mapping(target = "nationality", source = "nationality")
-    @Mapping(target = "licenseExpirationDate", source = "licenseExpirationDate")
-    @Mapping(target = "role", source = "role")
+//    @Mapping(target = "id", ignore = true)
+//    @Mapping(target = "password", expression = "java(PasswordUtil.hashPassword(registerVM.getPassword()))")
+//    @Mapping(target = "joinDate", expression = "java(LocalDateTime.now())")
+//    @Mapping(target = "firstName", source = "firstName")
+//    @Mapping(target = "lastName", source = "lastName")
+//    @Mapping(target = "cin", source = "cin")
+//    @Mapping(target = "email", source = "email")
+//    @Mapping(target = "nationality", source = "nationality")
+//    @Mapping(target = "licenseExpirationDate", source = "licenseExpirationDate")
+//    @Mapping(target = "role", source = "role")
     User toEntity(RegisterVM registerVM);
 
     RegisterVM toDto(User user);
