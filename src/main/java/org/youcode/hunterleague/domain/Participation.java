@@ -1,4 +1,4 @@
-package org.youcode.hunterleague.domain.entities;
+package org.youcode.hunterleague.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -8,6 +8,7 @@ spring:
     #username: myuser
     #password: secret
   jpa:
+
     hibernate:
       ddl-auto: none
     show-sql: true
