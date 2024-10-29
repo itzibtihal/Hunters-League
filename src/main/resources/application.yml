@@ -1,6 +1,30 @@
+
 spring:
   application:
     name: HunterLeague
+ # datasource:
+  #  driver-class-name: org.postgresql.Driver
+   # url: jdbc:postgresql://localhost:5432/mydatabase
+    #username: myuser
+    #password: secret
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+    change-log: db/changelog/master.yaml
+  docker:
+    compose:
+      file: src/main/docker/compose.yaml  # Path to the docker-compose file
+      enabled: true
+      lifecycle-management: start_only
+
+
 
 server:
   port: 8081
