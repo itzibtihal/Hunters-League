@@ -1,4 +1,4 @@
-package org.youcode.hunterleague.repository.dto;
+package org.youcode.hunterleague.web.vm;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterDTO {
+public class RegisterVM {
 
     @NotBlank(message = "Username is required")
     @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters long")

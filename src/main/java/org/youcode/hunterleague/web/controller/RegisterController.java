@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.youcode.hunterleague.domain.User;
 import org.youcode.hunterleague.exception.user.InvalidUserDataException;
-import org.youcode.hunterleague.repository.dto.RegisterDTO;
 import org.youcode.hunterleague.service.RegisterService;
+import org.youcode.hunterleague.service.dto.UserDTO;
+import org.youcode.hunterleague.web.vm.RegisterVM;
+import org.youcode.hunterleague.web.vm.mapper.UserMapper;
 
 @RestController
 @RequestMapping("v1/api/register")
@@ -20,20 +22,32 @@ import org.youcode.hunterleague.service.RegisterService;
 public class RegisterController {
 
     private final RegisterService registerService;
+    private final UserMapper userMapper;
 
     @Autowired
-    public RegisterController(RegisterService registerService) {
+    public RegisterController(RegisterService registerService,UserMapper userMapper) {
         this.registerService = registerService;
+        this.userMapper = userMapper;
     }
+
+
+//    @PostMapping
+//    public ResponseEntity<UserDTO> registerUser(@Valid @RequestBody RegisterVM registerVM) {
+//
+//            User user = userMapper.toEntity(registerVM);
+//            User registeredUser = registerService.registerUser(user);
+//            UserDTO userDTO = userMapper.toDto(registeredUser);
+//            return new ResponseEntity<>(userDTO,HttpStatus.OK);
+//
+//    }
 
 
     @PostMapping
-    public ResponseEntity<User> registerUser(@Valid @RequestBody RegisterDTO registerDTO) {
-        try {
-            User user = registerService.registerUser(registerDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(user);
-        } catch (InvalidUserDataException e) {
-            return ResponseEntity.badRequest().body(null);
-        }
+    public ResponseEntity<String> registerUser(@RequestBody @Valid RegisterVM registerVM) {
+        User user = userMapper.toEntity(registerVM);
+        registerService.registerUser(user);
+        return ResponseEntity.ok("User registered successfully");
     }
+
+
 }

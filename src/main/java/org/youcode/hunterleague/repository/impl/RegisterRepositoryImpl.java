@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 import org.youcode.hunterleague.domain.User;
 import org.youcode.hunterleague.repository.RegisterRepository;
 import org.youcode.hunterleague.repository.UserRepository;
-import org.youcode.hunterleague.repository.dto.RegisterDTO;
-import org.youcode.hunterleague.repository.dto.mapper.UserMapper;
 
 import java.util.Optional;
 
@@ -14,19 +12,16 @@ import java.util.Optional;
 public class RegisterRepositoryImpl implements RegisterRepository {
 
     private final UserRepository userRepository;
-    private final UserMapper userMapper;
+
 
     @Autowired
-    public RegisterRepositoryImpl(UserRepository userRepository, UserMapper userMapper) {
+    public RegisterRepositoryImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.userMapper = userMapper;
+
     }
 
     @Override
-    public User registerUser(RegisterDTO registerDTO) {
-
-        User user = userMapper.toUser(registerDTO);
-
+    public User registerUser(User user) {
         return userRepository.save(user);
     }
 
