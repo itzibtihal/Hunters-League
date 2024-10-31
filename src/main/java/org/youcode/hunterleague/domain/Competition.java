@@ -37,4 +37,11 @@ public class Competition {
     @OneToMany(mappedBy = "competition")
     private List<Participation> participations;
 
+    @Transient
+    private Integer participantCount;
+
+    public Integer getParticipantCount() {
+        return participations != null ? participations.size() : 0;
+    }
+
 }
