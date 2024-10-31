@@ -2,7 +2,6 @@ package org.youcode.hunterleague.web.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.youcode.hunterleague.domain.User;
-import org.youcode.hunterleague.exception.user.InvalidUserDataException;
 import org.youcode.hunterleague.service.RegisterService;
-import org.youcode.hunterleague.service.dto.UserDTO;
 import org.youcode.hunterleague.web.vm.RegisterVM;
 import org.youcode.hunterleague.web.vm.mapper.UserMapper;
 
