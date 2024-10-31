@@ -51,9 +51,16 @@ public class SpeciesController {
     }
 
 
+//    @PostMapping("/save")
+//    public ResponseEntity<String> saveSpecies(@Valid @RequestBody SpeciesVM speciesVM) {
+//        Species species = speciesMapper.toEntity(speciesVM);
+//        speciesService.saveSpecies(species);
+//        return ResponseEntity.ok("Specy registered successfully");
+//    }
+
     @PostMapping("/save")
-    public ResponseEntity<String> saveSpecies(@Valid @RequestBody SpeciesVM speciesVM) {
-        Species species = speciesMapper.toEntity(speciesVM);
+    public ResponseEntity<String> saveSpecies(@Valid @RequestBody Species species) {
+        //Species species = speciesMapper.toEntity(species);
         speciesService.saveSpecies(species);
         return ResponseEntity.ok("Specy registered successfully");
     }

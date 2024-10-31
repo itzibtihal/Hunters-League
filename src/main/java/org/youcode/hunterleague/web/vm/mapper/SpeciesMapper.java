@@ -11,12 +11,13 @@ public interface SpeciesMapper {
 
     SpeciesMapper INSTANCE = Mappers.getMapper(SpeciesMapper.class);
 
-    @Mapping(target = "name", source = "name")
-    @Mapping(target = "category", source = "category")
-    @Mapping(target = "minimumWeight", source = "minimumWeight")
-    @Mapping(target = "difficulty", source = "difficulty")
-    @Mapping(target = "points", source = "points")
-    Species toEntity(SpeciesVM SpeciesVM);
-    SpeciesMapper toDto(Species species);
+//    @Mapping(target = "name", source = "name")
+//    @Mapping(target = "category", source = "category")
+//    @Mapping(target = "minimumWeight", source = "minimumWeight")
+//    @Mapping(target = "difficulty", source = "difficulty")
+//    @Mapping(target = "points", source = "points")
+  //  Species toEntity(SpeciesVM SpeciesVM);
+    Species toEntity(Species Species);
+    //SpeciesMapper toDto(Species species);
 
 }
