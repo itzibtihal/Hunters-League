@@ -3,7 +3,8 @@ package org.youcode.hunterleague.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.youcode.hunterleague.service.ParticipationServiceImpl;
+import org.youcode.hunterleague.service.ParticipationService;
+import org.youcode.hunterleague.service.impl.ParticipationServiceImpl;
 import org.youcode.hunterleague.web.vm.ParticipationVm;
 
 
@@ -11,10 +12,10 @@ import org.youcode.hunterleague.web.vm.ParticipationVm;
 @RequestMapping("v1/api/participations")
 public class ParticipationController {
 
-    private final ParticipationServiceImpl participationService;
+    private final ParticipationService participationService;
 
     @Autowired
-    public ParticipationController(ParticipationServiceImpl participationService) {
+    public ParticipationController(ParticipationService participationService) {
         this.participationService = participationService;
     }
 

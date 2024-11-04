@@ -1,4 +1,4 @@
-package org.youcode.hunterleague.service;
+package org.youcode.hunterleague.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,14 @@ import org.youcode.hunterleague.exception.user.UserLicenseExpiredException;
 import org.youcode.hunterleague.repository.CompetitionRepository;
 import org.youcode.hunterleague.repository.ParticipationRepository;
 import org.youcode.hunterleague.repository.UserRepository;
+import org.youcode.hunterleague.service.ParticipationService;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ParticipationServiceImpl {
+public class ParticipationServiceImpl implements ParticipationService {
 
     private final CompetitionRepository competitionRepository;
     private final UserRepository userRepository;
@@ -33,6 +34,7 @@ public class ParticipationServiceImpl {
         this.participationRepository = participationRepository;
     }
 
+    @Override
     public void participateInCompetition(UUID userId, UUID competitionId) {
         Optional<User> userOpt = userRepository.findById(userId);
         Optional<Competition> competitionOpt = competitionRepository.findById(competitionId);
