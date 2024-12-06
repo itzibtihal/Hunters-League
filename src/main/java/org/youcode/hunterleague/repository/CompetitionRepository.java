@@ -15,8 +15,9 @@ public interface CompetitionRepository extends JpaRepository<Competition, UUID> 
 
     Optional<Competition> findByCode(String code);
 
-    @Query("SELECT c FROM Competition c WHERE EXTRACT(YEAR FROM c.date) = EXTRACT(YEAR FROM CAST(:date AS timestamp)) " +
-            "AND EXTRACT(WEEK FROM c.date) = EXTRACT(WEEK FROM CAST(:date AS timestamp))")
+    @Query(value = "SELECT * FROM competition c WHERE EXTRACT(YEAR FROM c.date) = EXTRACT(YEAR FROM :date) " +
+            "AND EXTRACT(WEEK FROM c.date) = EXTRACT(WEEK FROM :date)",
+            nativeQuery = true)
     List<Competition> findCompetitionsInSameWeek(@Param("date") LocalDateTime date);
 
     @Query("SELECT new org.youcode.hunterleague.service.DTOs.CompetitionDTO(c.code, c.location, c.date, COUNT(p)) " +

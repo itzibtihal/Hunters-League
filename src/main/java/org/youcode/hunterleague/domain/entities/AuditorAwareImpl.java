@@ -1,6 +1,5 @@
 package org.youcode.hunterleague.domain.entities;
 
-import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
