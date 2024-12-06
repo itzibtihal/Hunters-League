@@ -1,26 +1,20 @@
 package org.youcode.hunterleague.service;
 
-import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.youcode.hunterleague.domain.Competition;
+import org.youcode.hunterleague.domain.entities.Competition;
+import org.youcode.hunterleague.service.DTOs.CompetitionDTO;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public interface CompetitionService {
 
     Competition createCompetition(Competition competition);
-
-    void deleteCompetition(UUID id);
-
-    Competition updateCompetition(UUID id, @Valid Competition competitionDetails);
-
-    Competition getCompetitionDetails(UUID id);
-
-    Page<Competition> getAllCompetitions(Pageable pageable);
-
-    Page<Competition> getCompetitionsByLocation(String location, int page, int size);
-
-    Page<Competition> getCompetitionsByOpenRegistration(boolean openRegistration, int page, int size);
-
+    Optional<Competition> findByCode(String code);
+    Competition findById(UUID id);
+    Page<Competition> findAllCompetitionsPaginated(int page, int size);
+    Boolean delete(UUID id);
+    Competition update(UUID id, Competition competition);
+    CompetitionDTO getCompetitionDetails(UUID id);
+    void closeRegistrationsBeforeCompetition();
 }
