@@ -1,6 +1,19 @@
 spring:
-  application:
-    name: HunterLeague
 
-server:
-  port: 8081
+  jpa:
+    properties:
+      hibernate:
+        default_schema: public
+        hbm2ddl:
+          auto: update
+
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/master.yaml
+
+  docker:
+    compose:
+      file: src/main/docker/compose.yaml
+      enabled: true
+      lifecycle-management: start_only
