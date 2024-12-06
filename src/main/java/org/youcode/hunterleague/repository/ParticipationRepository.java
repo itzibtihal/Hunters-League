@@ -24,4 +24,4 @@ public interface ParticipationRepository extends JpaRepository<Participation, UU
             "ORDER BY p.score DESC LIMIT 3")
     List<PodiumDTO> findTopThreeByCompetition(@Param("competitionId") UUID competitionId);
 
-   }
+}

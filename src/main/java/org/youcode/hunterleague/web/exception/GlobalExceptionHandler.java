@@ -20,8 +20,6 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    //User exceptions handler
-
     @ExceptionHandler(InvalidUserExeption.class)
     public ResponseEntity<String> handleInvalidUserException(InvalidUserExeption ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
@@ -61,7 +59,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
-    //Species exceptions handler
+
 
     @ExceptionHandler(InvalidSpeciesException.class)
     public ResponseEntity<String> handleInvalidSpeciesException(InvalidSpeciesException ex) {
@@ -73,7 +71,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
-    // Competition exceptions handler
+
 
     @ExceptionHandler(CompetitionAlreadyExistException.class)
     public ResponseEntity<String> handelCompetitionAlreadyExistException(CompetitionAlreadyExistException ex){
@@ -90,7 +88,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
-    // Participation exceptions handler
+
 
     @ExceptionHandler(ParticipationAlreadyExistException.class)
     public ResponseEntity<String> handelParticipationAlreadyExistException(ParticipationAlreadyExistException ex){
